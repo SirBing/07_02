@@ -1,16 +1,10 @@
 public class Konto {
     private String inhaber;
-    private String IBAN;
-    private float kontostand;
+    protected float kontostand;
     private final float ZINSSATZ = 3.0f;
 
     public Konto(String inhaber) {
         this.inhaber = inhaber;
-        IBAN = "DE";
-        for (int i = 0; i < 14; i++) {
-            IBAN += Integer.toString((int)(Math.random() * 9));
-        }
-        System.out.println("Die IBAN für " + inhaber + " lautet: " + IBAN);
     }
 
     public String getInhaber() {
@@ -47,6 +41,16 @@ public class Konto {
     public float verzinsen() {
         kontostand = kontostand * (1 + ZINSSATZ / 12 / 100);
         return kontostand;
+    }
+
+    //Dummy-Methode
+    public boolean pruefePin(int pin) {
+        return false;
+    }
+
+    //Dummy-Methode
+    public String getIBAN() {
+        return null;
     }
 
 

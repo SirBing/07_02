@@ -1,0 +1,35 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>309</x><y>550</y><w>210</w><h>210</h></coordinates><panel_attributes>Konto
+--
+- inhaber: String
+- IBAN: String
+- kontostand: float
+- Zinssatz: float
+--
++ Konto (String inhaber)
++ getInhaber(): String
++ getKontostand(): float
++ einzahlen(betrag: float)
++ abheben(betrag: float)
++ toString(): String
++ verzinsen(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>309</x><y>310</y><w>210</w><h>200</h></coordinates><panel_attributes>Bank
+--
+- MAX_KONTEN: int
+- konten: int *
+- belegteKonten: int
+- monat: int
+--
++ Bank()
+- kontoSuchen(kunde: String): Konto
++ kontoEroeffnen(kunde: String)
++ einzahlen (kunde: String, betrag: float)
++ abheben (kunde: String, betrag: float)
++ bestandAusgeben()
++ abschlussDurchfuehren()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>309</x><y>190</y><w>210</w><h>70</h></coordinates><panel_attributes>Kundeninteraktion
+--
+
+--
++ main(String[] args)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>250</y><w>40</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+m1=2</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>500</y><w>70</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+m1=0...100</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element></diagram>
